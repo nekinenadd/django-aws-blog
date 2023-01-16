@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css_files%}
+ <link rel="stylesheet" href="{% static 'blog/index.css'%}">
+ <link rel="stylesheet" href="{% static 'blog/post.css'%}">
+{% endblock %}
+
+{% block content %}
+    <section id="welcome">
+        <header>
+            <img src="{% static 'blog/images/alcohol.jpg'%}" alt="Tina - Author of this blog">
+            <h2>KRISTINA'S BLOG</h2>
+        </header>
+        <p>Hi, I am Tina and I am a professional make up artist</p>
+    </section>
+
+    <section id="latest-posts">
+        <h2>My Latest Thoughts</h2>
+
+        <ul>
+            {% for post in posts  %}
+            {% include 'blog/includes/post.html' %}
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section id="about">
+        <h2>What I do</h2>
+        <p>I Love Make up and I love to get blacked out drunk</p>
+        <p>My goal is to get fucked up every weekend as much as possible!</p>
+    </section>
+
+{% endblock %}
