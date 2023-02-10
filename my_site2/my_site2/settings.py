@@ -34,14 +34,16 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+
     'blog',
-    'storages',
+    #'storages',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "django_bootstrap5",
 ]
 
 MIDDLEWARE = [
@@ -82,12 +84,19 @@ WSGI_APPLICATION = 'my_site2.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "postgres",
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': "db.sqlite3",
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': ''
+
+        '''
         "USER": getenv("DB_USER"),
         "PASSWORD": getenv("DB_PASSWORD"),
         "HOST": getenv("DB_HOST"),
         "PORT": "5432"
+        '''
     }
 }
 
@@ -158,5 +167,5 @@ STATICFILES_FOLDER = "static"
 MEDIAFILES_FOLDER = "media"
 
 
-STATICFILES_STORAGE = "custom_storages.StaticFileStorage"
-DEFAULT_FILE_STORAGE = "custom_storages.MediaFileStorage"
+#STATICFILES_STORAGE = "custom_storages.StaticFileStorage"
+#DEFAULT_FILE_STORAGE = "custom_storages.MediaFileStorage"
